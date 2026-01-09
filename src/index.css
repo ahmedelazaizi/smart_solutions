@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* A.Y Smart Solutions Brand Colors */
+    --background: 210 20% 98%;
+    --foreground: 215 35% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 35% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 35% 15%;
+
+    /* Teal/Cyan - Primary Brand Color */
+    --primary: 187 85% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Lime Green - Secondary Brand Color */
+    --secondary: 80 65% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Navy Dark - Accent */
+    --accent: 215 45% 20%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 187 85% 43%;
+
+    --radius: 0.75rem;
+
+    /* Custom Brand Extensions */
+    --teal: 187 85% 43%;
+    --teal-light: 187 75% 55%;
+    --teal-dark: 187 90% 35%;
+    
+    --lime: 80 65% 45%;
+    --lime-light: 80 55% 55%;
+    --lime-dark: 80 70% 35%;
+    
+    --navy: 215 45% 20%;
+    --navy-light: 215 35% 30%;
+    --navy-dark: 215 50% 12%;
+
+    --amber: 35 95% 55%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--teal)) 0%, hsl(var(--lime)) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(var(--navy-dark)) 0%, hsl(var(--navy)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--navy) / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(var(--navy) / 0.12);
+    --shadow-elevated: 0 20px 50px -15px hsl(var(--navy) / 0.2);
+    --shadow-glow-teal: 0 0 40px -10px hsl(var(--teal) / 0.4);
+    --shadow-glow-lime: 0 0 40px -10px hsl(var(--lime) / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 50% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 215 45% 12%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 215 45% 12%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 187 85% 50%;
+    --primary-foreground: 215 50% 8%;
+
+    --secondary: 80 65% 50%;
+    --secondary-foreground: 215 50% 8%;
+
+    --accent: 215 35% 25%;
+    --accent-foreground: 210 20% 98%;
+
+    --muted: 215 40% 15%;
+    --muted-foreground: 210 15% 60%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 35% 20%;
+    --input: 215 35% 20%;
+    --ring: 187 85% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-glow-teal {
+    box-shadow: var(--shadow-glow-teal);
+  }
+
+  .shadow-glow-lime {
+    box-shadow: var(--shadow-glow-lime);
+  }
+
+  .glass {
+    @apply backdrop-blur-xl bg-white/80 border border-white/20;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-xl bg-navy/80 border border-white/10;
+  }
+}
